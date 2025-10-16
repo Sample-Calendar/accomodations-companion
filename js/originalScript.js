@@ -14,29 +14,29 @@ async function fetchCredits() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const calendarEl = document.getElementById("calendar");
+    //const calendarEl = document.getElementById("calendar");
     const showHelpersCheckbox = document.getElementById("showHelpers");
     const openFormButton = document.getElementById("openFormButton");
     const openFeedbackButton = document.getElementById("openFeedbackButton");
-    const eventModal = document.getElementById("eventModal");
-    const modalTitle = document.querySelector(".modal-title");
-    const modalStart = document.querySelector(".modal-start");
-    const modalEnd = document.querySelector(".modal-end");
-    const modalOrigin = document.querySelector(".modal-origin");
-    const modalDestination = document.querySelector(".modal-destination");
-    const modalContactIcon = document.querySelector(".modal-contact-icon");
-    const modalContact = document.querySelector(".modal-contact");
-    const modalMessage = document.querySelector(".modal-message");
-    const modalFlight = document.querySelector(".modal-flight");
-    const modalRole = document.querySelector(".modal-role");
-    const modalLanguages = document.querySelector(".modal-languages");
-    const closeModal = document.querySelector(".close");
-    const chevronLeft = document.querySelector(".chevron.left");
-    const chevronRight = document.querySelector(".chevron.right");
-    const copyButton = document.querySelector(".copy-button");
-    const messageToggle = document.querySelector(".message-toggle");
-    const profilePopup = document.getElementById("profilePopup");
-    const closePopup = document.querySelector(".close-popup");
+    //const eventModal = document.getElementById("eventModal");
+    //const modalTitle = document.querySelector(".modal-title");
+    //const modalStart = document.querySelector(".modal-start");
+    //const modalEnd = document.querySelector(".modal-end");
+    //const modalOrigin = document.querySelector(".modal-origin");
+    //const modalDestination = document.querySelector(".modal-destination");
+    //const modalContactIcon = document.querySelector(".modal-contact-icon");
+    //const modalContact = document.querySelector(".modal-contact");
+    //const modalMessage = document.querySelector(".modal-message");
+    //const modalFlight = document.querySelector(".modal-flight");
+    //const modalRole = document.querySelector(".modal-role");
+    //const modalLanguages = document.querySelector(".modal-languages");
+    //const closeModal = document.querySelector(".close");
+    //const chevronLeft = document.querySelector(".chevron.left");
+    //const chevronRight = document.querySelector(".chevron.right");
+    //const copyButton = document.querySelector(".copy-button");
+    //const messageToggle = document.querySelector(".message-toggle");
+    //const profilePopup = document.getElementById("profilePopup");
+    //const closePopup = document.querySelector(".close-popup");
     const profileImg = document.querySelector(".profile-img");
     const profilePopupContent = document.getElementById("profilePopupContent");
 
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     return; // Exit if ports fail to load
   }
 
-  const calendar = new FullCalendar.Calendar(calendarEl, {
+  /*const calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: "listMonth",
     initialDate: new Date().toISOString().split("T")[0],
     headerToolbar: { left: "prev,next today", center: "title", right: "listMonth,listWeek,dayGridMonth" },
@@ -94,19 +94,19 @@ document.addEventListener("DOMContentLoaded", async () => {
       updateModal(info.event);
       eventModal.style.display = "block";
     },
-  });
+  });*/
 
-  setupSearchableSelect("origin", calendar);
-  setupSearchableSelect("destination", calendar);
+  //setupSearchableSelect("origin", calendar);
+  //setupSearchableSelect("destination", calendar);
 
-  calendar.render();
+  //calendar.render();
 
-  fetchEvents(null, (events) => {
+  /*fetchEvents(null, (events) => {
     allEvents = events;
     applyFilters(calendar);
-  }, (error) => console.error("Fetch error:", error));
+  }, (error) => console.error("Fetch error:", error));*/
 
-  showHelpersCheckbox.addEventListener("change", () => applyFilters(calendar));
+  //showHelpersCheckbox.addEventListener("change", () => applyFilters(calendar));
   openFormButton.addEventListener("click", () =>
     window.open("https://docs.google.com/forms/d/e/1FAIpQLSftIxuQVKmG5Pf4TsXlq0Uivcm01flAjIJH29ko8-ttt5U7pw/viewform", "_blank")
   );
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  function updateModal(event) {
+  /*function updateModal(event) {
     modalTitle.textContent = event.title;
     modalStart.textContent = event.start ? event.start.toLocaleString() : "N/A";
     modalEnd.textContent = event.end ? event.end.toLocaleString() : "N/A";
@@ -203,15 +203,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     modalFlight.textContent = event.extendedProps.flight || "N/A";
     modalRole.textContent = event.extendedProps.type || "N/A";
     modalRole.className = "detail-value modal-role" + (event.extendedProps.type === "Offering Help" ? " helper" : " traveler");
-  }
+  }*/
 
-  function navigateEvent(direction) {
+  /*function navigateEvent(direction) {
     const allFilteredEvents = calendar.getEvents();
     currentEventIndex = Math.max(0, Math.min(allFilteredEvents.length - 1, currentEventIndex + direction));
     if (allFilteredEvents.length) updateModal(allFilteredEvents[currentEventIndex]);
-  }
+  }*/
 
-  function applyFilters(calendar) {
+  /*function applyFilters(calendar) {
     const getSelectedValues = (filterName) =>
       Array.from(document.getElementById(`${filterName}-options`).querySelectorAll(".option-item.selected"))
         .map((tag) => tag.dataset.value.toUpperCase());
@@ -230,9 +230,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
     calendar.setOption("events", filteredEvents);
     calendar.render();
-  }
+  }*/
 
-  function setupSearchableSelect(filterName, calendar) {
+  /*function setupSearchableSelect(filterName, calendar) {
     const input = document.getElementById(`${filterName}-input`);
     const optionsContainer = document.getElementById(`${filterName}-options`);
     const filterData = portsData.find((f) => f.name === filterName);
@@ -324,9 +324,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         optionsContainer.style.display = "none";
       }
     });
-  }
+  }*/
 
-  async function fetchEvents(fetchInfo, successCallback, failureCallback) {
+  /*async function fetchEvents(fetchInfo, successCallback, failureCallback) {
     try {
       const response = await fetch("/data/events.csv");
       const csvText = await response.text();
@@ -382,5 +382,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (error) {
       failureCallback(error);
     }
-  }
+  }*/
 });
