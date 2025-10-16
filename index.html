@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>-->
+  <script type="module" src="js/originalScript.js"></script>
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/main.min.css">-->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="header-bar">
+    <div class="burger-menu">
+      <i class="fas fa-bars"></i>
+      <div class="burger-dropdown" id="burgerDropdown">
+        <button id="openFormButton" class="add-event-button">Add New Group</button>
+        <button id="openFeedbackButton" class="add-event-button">Feedback</button>
+      </div>
+    </div>
+    <div class="header-center">
+      <div class="header-title">Accomodation Companion</div>
+      <div class="scrolling-sticker">
+        <div class="scrolling-text">
+          ℹ️ Add Groups or Feedback from the menu on the left.
+          ℹ️ Kindly note that we cannot guarantee accuracy on the info on these channels.
+          ℹ️ Please use feedback channel for any complaints or feedback. Though not actively monitored, we will try prompt updates.
+          ℹ️ We encourage you to proceed with caution when contacting individuals. Let's keep supporting each other.
+          ℹ️ This page is striclty for informational purposes only, Page or admins dont have any direct contacts with these groups or its admins.
+          ℹ️ Please reach out to us if you think any listing is not accurate.
+        </div>
+      </div>
+    </div>
+    <div class="profile-picture">
+      <img src="/data/nri_adda_logo.png" alt="Profile Picture" class="profile-img">
+    </div>
+  </div>
+  <div class="toolbar">
+    <div>
+      <label for="showHelpers">Show only Whatsapp:</label>
+      <div class="toggle-container">
+        <input type="checkbox" id="showHelpers" />
+        <label class="toggle" for="showHelpers"></label>
+      </div>
+    </div>
+    <div class="filter-container">
+      <div class="searchable-select">
+        <label for="origin-input">State:</label>
+        <input type="text" id="origin-input" placeholder="Search origins..." autocomplete="off">
+        <div class="options-container" id="origin-options" style="display: none;"></div>
+      </div>
+      <div class="searchable-select">
+        <label for="destination-input">Destination Airport:</label>
+        <input type="text" id="destination-input" placeholder="Search destinations..." autocomplete="off">
+        <div class="options-container" id="destination-options" style="display: none;"></div>
+      </div>
+    </div>
+  </div>
+  <!--<div id="calendar"></div>-->
+
+  <div id="eventModal" class="modal">
+    <div class="modal-content">
+      <span class="close">×</span>
+      <button class="chevron left"><</button>
+      <div class="modal-body">
+        <h2 class="modal-title"></h2>
+        <div class="detail-item"><span class="detail-key">Start:</span><span class="detail-value modal-start"></span></div>
+        <div class="detail-item"><span class="detail-key">Origin:</span><span class="detail-value modal-origin"></span></div>
+        <div class="detail-item"><span class="detail-key">End:</span><span class="detail-value modal-end"></span></div>
+        <div class="detail-item"><span class="detail-key">Destination:</span><span class="detail-value modal-destination"></span></div>
+        <div class="detail-item"><span class="detail-key">Flight:</span><span class="detail-value modal-flight"></span></div>
+        <div class="detail-item"><span class="detail-key">Participation Role:</span><span class="detail-value modal-role"></span></div>
+        <div class="detail-item">
+          <span class="detail-key">Message:</span>
+          <span class="detail-value modal-message"></span>
+          <button class="message-toggle" aria-label="Toggle message visibility">Show More</button>
+        </div>
+        <div class="detail-item"><span class="detail-key">Languages:</span><span class="detail-value modal-languages"></span></div>
+        <div class="detail-item">
+          <span class="detail-key">Contact:</span>
+          <span class="detail-value modal-contact-icon"></span>
+          <span class="detail-value modal-contact"></span>
+          <button class="copy-button" aria-label="Copy contact to clipboard">Copy</button>
+        </div>
+      </div>
+      <button class="chevron right">></button>
+    </div>
+  </div>
+
+  <!-- Profile Popup -->
+  <div id="profilePopup" class="profile-popup">
+    <div class="profile-popup-content">
+      <span class="close-popup">×</span>
+      <div id="profilePopupContent" class="profile-popup-text"></div>
+    </div>
+  </div>
+</body>
+</html>
