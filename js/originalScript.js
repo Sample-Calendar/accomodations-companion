@@ -30,13 +30,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     //const modalFlight = document.querySelector(".modal-flight");
     //const modalRole = document.querySelector(".modal-role");
     //const modalLanguages = document.querySelector(".modal-languages");
-    //const closeModal = document.querySelector(".close");
+    const closeModal = document.querySelector(".close");
     //const chevronLeft = document.querySelector(".chevron.left");
     //const chevronRight = document.querySelector(".chevron.right");
     //const copyButton = document.querySelector(".copy-button");
     //const messageToggle = document.querySelector(".message-toggle");
     //const profilePopup = document.getElementById("profilePopup");
-    //const closePopup = document.querySelector(".close-popup");
+    const closePopup = document.querySelector(".close-popup");
     const profileImg = document.querySelector(".profile-img");
     const profilePopupContent = document.getElementById("profilePopupContent");
 
@@ -119,20 +119,20 @@ document.addEventListener("DOMContentLoaded", async () => {
   window.addEventListener("click", (event) => {
     if (event.target === eventModal) eventModal.style.display = "none";
   });
-  chevronLeft.addEventListener("click", () => navigateEvent(-1));
-  chevronRight.addEventListener("click", () => navigateEvent(1));
-  copyButton.addEventListener("click", () => {
+  //chevronLeft.addEventListener("click", () => navigateEvent(-1));
+  //chevronRight.addEventListener("click", () => navigateEvent(1));
+  /*copyButton.addEventListener("click", () => {
     const contactInfo = modalContact.textContent;
     if (contactInfo && contactInfo !== "N/A") {
       navigator.clipboard.writeText(contactInfo)
         .then(() => alert("Contact copied to clipboard!"))
         .catch(() => alert("Failed to copy contact. Please try manually."));
     }
-  });
-  messageToggle.addEventListener("click", () => {
+  });*/
+  /*messageToggle.addEventListener("click", () => {
     modalMessage.classList.toggle("expanded");
     messageToggle.textContent = modalMessage.classList.contains("expanded") ? "Show Less" : "Show More";
-  });
+  });*/
 
   // Profile Popup Functionality
   profileImg.addEventListener("click", async () => {
